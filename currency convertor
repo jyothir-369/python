@@ -1,0 +1,71 @@
+# currency data.txt 
+Argentine Peso  162.844525 0.006141
+Australian Dollar  1.498145   0.667492
+Bahraini Dinar 0.376000   2.659574
+Botswana Pula  12.937214  0.077296
+Brazilian Real 5.383173   0.185764
+British Pound  0.841437   1.188443
+Bruneian Dollar    1.381723   0.723734
+Bulgarian Lev  1.894615   0.527812
+Canadian Dollar    1.338711   0.746987
+Chilean Peso   941.778356 0.001062
+Chinese Yuan Renminbi  7.119896   0.140451
+Colombian Peso 4988.868567    0.000200
+Croatian Kuna  7.275674   0.137444
+Czech Koruna   23.579754  0.042409
+Danish Krone   7.205478   0.138783
+Emirati Dirham 3.672500   0.272294
+Euro   0.968701   1.032310
+Hong Kong Dollar   7.823244   0.127824
+Hungarian Forint   393.743311 0.002540
+Icelandic Krona    144.221133 0.006934
+Indian Rupee   81.339295  0.012294
+Indonesian Rupiah  15633.730476   0.000064
+Iranian Rial   42340.374487   0.000024
+Israeli Shekel 3.470361   0.288154
+Japanese Yen   140.359566 0.007125
+Kazakhstani Tenge  461.590230 0.002166
+Kuwaiti Dinar  0.307811   3.248752
+Libyan Dinar   4.889592   0.204516
+Malaysian Ringgit  4.553485   0.219612
+Mauritian Rupee    43.607372  0.022932
+Mexican Peso   19.440549  0.051439
+Nepalese Rupee 130.203876 0.007680
+New Zealand Dollar 1.631489   0.612937
+Norwegian Krone    10.196787  0.098070
+Omani Rial 0.384735   2.599193
+Pakistani Rupee    222.466426 0.004495
+Philippine Peso    57.236083  0.017471
+Polish Zloty   4.551623   0.219702
+Qatari Riyal   3.640000   0.274725
+Romanian New Leu   4.785891   0.208948
+Russian Ruble  60.718308  0.016469
+Saudi Arabian Riyal    3.750000   0.266667
+Singapore Dollar   1.381723   0.723734
+South African Rand 17.258114  0.057944
+South Korean Won   1339.765987    0.000746
+Sri Lankan Rupee   367.147569 0.002724
+Swedish Krona  10.642661  0.093961
+Swiss Franc    0.954282   1.047909
+Taiwan New Dollar  31.121482  0.032132
+Thai Baht  35.864439  0.027883
+Trinidadian Dollar 6.780986   0.147471
+Turkish Lira   18.620656  0.053704
+Venezuelan Bolivar 977525.123697  0.000001
+
+
+
+
+
+with open('currency data.txt') as f:
+    lines = f.readlines()
+
+currencyDict = {}   
+for line in lines:
+    parsed = line.split("/t")
+    currencyDict[parsed[0]] = parsed[1]
+    
+amount = int(input("Enter amount:\n"))
+print("enter the name of currency you want to convert this amount to? Available Options:\n", currencyDict.keys())
+
+
